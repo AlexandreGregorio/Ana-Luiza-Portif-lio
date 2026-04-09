@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANA BRAZ | Portifólio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contato" class="menu-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+      <img
+        src="img/LUMINA-11181 copiar.jpg"
+        alt="Foto Ana Braz"
+        class="foto-perfil"
+      />
+      <h1>Ana Braz</h1>
+      <p class="cabecalho-sub-titulo">Fotógrafa Corporativa</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Sou Ana Braz, fotógrafa com foco em retratos corporativos e imagem
+          profissional. Acredito que uma boa fotografia vai além da estética —
+          ela comunica posicionamento, presença e identidade. Meu trabalho é
+          criar imagens que transmitam confiança e verdade, seja em ambientes
+          corporativos, eventos ou no dinamismo do esporte. Hoje, também
+          registro momentos que exigem sensibilidade e agilidade, como eventos e
+          esportes como futevôlei e corrida, sempre buscando capturar o que é
+          real, sem forçar cenas. Mais do que fotos bonitas, entrego imagens com
+          propósito.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <img src="img/IMG_0574.jpg" alt="Projeto 1" class="projetos-imagem" />
+
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Corporativo Externo</h3>
+            <p class="paragrafo-projetos">
+              Profissionalismo além do escritório. Sua imagem, no cenário que
+              representa você
+            </p>
+          </div>
+
+        </div>
+
+        <div class="projetos-card">
+          <img src="img/IMG_3885.jpg" alt="Projeto 1" class="projetos-imagem" />
+
+          <div class="caixa-textos-projetos">
+          <h3 class="info-projetos">Gestante</h3>
+          <p class="paragrafo-projetos">
+            Mais que espera — um marco na sua história.
+          </p>
+          </div>
+
+        </div>
+
+        <div class="projetos-card">
+          <img
+            src="img/LETÍCIA-14.jpg"
+            alt="Projeto 1"
+            class="projetos-imagem">
+
+           <div class="caixa-textos-projetos">
+          <h3 class="info-projetos">Aniversário</h3>
+          <p class="paragrafo-projetos">
+            Mais do que comemorar um novo ano, é sobre registrar tudo que fez
+            esse momento valer a pena.
+          </p>
+        </div>
+
+      </div>
+    </section>       
+
+    <section id="contato" class="contatos">
+      <h2 class="contatos-titulos">Entre em Contato</h2>
+
+      <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <div class="grupo-form">
+          <input placeholder="Nome" class="campo-form" id="nome"/>
+        </div>
+
+        <div class="grupo-form">
+          <textarea
+            class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+        </div>
+
+        <button type="submit" class="botao-form">Enviar Whatsapp</button>
+      </form>
+
+    </section>
+    <script>
+      function enviarWhats(event){
+        event.preventDefault()
+
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5521959161478'
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent(texto)
+
+        const url = `https://wa.me/${telefone}/?text=${msgFormatada}`
+
+        window.open(url, '_blank')
+      }
+
+
+    </script>
+
+  </body>
+</html>
